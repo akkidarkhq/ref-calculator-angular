@@ -1,0 +1,11 @@
+<app-display class="display" [value]="displayValue" [id]="Id" ></app-display>
+<div class="functionBtnContainer">
+    <app-function-button *ngFor="let fnbtn of functionBtn" [label]="fnbtn.value" (onClick)="functionButtonClickHandler(fnbtn)" [id]="" ></app-function-button>
+</div>
+<div class="operationBtnContainer">
+    <app-operation-button *ngFor="let opbtn of operationBtn" [label]="opbtn.value" (onClick)="operationButtonClickHandler(opbtn)" [id]=""></app-operation-button>
+</div>
+<div class="numericalBtnContainer">
+    <app-number-button *ngFor="let numbtn of numericalBtn" [label]="numbtn.value" (onClick)="numericalButtonClickHandler(numbtn)" [id]=""></app-number-button>
+</div>
+
