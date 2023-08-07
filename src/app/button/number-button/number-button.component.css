@@ -1,4 +1,9 @@
-.numbtns > button.btn{
-    background-color: blue;
+.numbtns >  button.btn{
+    background-color:#673AB7;
+    height: 60px;
+    width: 60px;
+    
+    margin-left: 10px;
+    margin-top: 10px;
 }
 

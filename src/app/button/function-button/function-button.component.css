@@ -1,3 +1,10 @@
-.fnbtns > button.btn{
-    background-color: blueviolet;
+.fnbtns >  button.btn {
+    background-color: #F44336;
+    color: black;
+    width: 90px;
+    height: 50px;
+    margin-inline: 10px;
+    margin-top: 10px;
 }
+
+

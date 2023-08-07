@@ -1,0 +1,10 @@
+.display{
+    height: 60px;
+    width: 280px;
+}
+
+input#display.display{
+    background-color: rgb(84, 84, 84);
+    color: aliceblue;
+    border: none;
+}

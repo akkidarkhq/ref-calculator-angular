@@ -7,4 +7,5 @@ import { Component,Input } from '@angular/core';
 })
 export class DisplayComponent {
   @Input() value ='';
+  @Input() Id ="display"
 }

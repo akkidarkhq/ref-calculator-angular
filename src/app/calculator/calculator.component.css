@@ -1,5 +1,55 @@
-.display{
-    background-color: aqua;
-    height: 150px;
-    width: 50px;
+
+
+.calculatorContainer{
+    height: 575px;
+    width: 340px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 2px 3px 4px rgb(32, 45, 88);
 }
+
+.displayContainer{
+ 
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.buttonContainer{
+    height: 500px;
+    width: 300px;
+
+}
+
+.functionBtnContainer{
+    background-color: blue;
+    height: 130px;
+    width: 220px;
+    float: left;
+}
+
+.operationBtnContainer{
+ 
+    height: 430Px;
+    width: 80px;
+    float: right;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; 
+    
+}
+
+
+.numericalBtnContainer{
+  
+    height: 300px;
+    width: 220px;
+    float: left;
+}
+

@@ -12,8 +12,8 @@ export class FunctionButtonComponent extends ButtonComponent {
       
     }
 
-    onClickHandler(value:any){
-      console.log("fn button component called with value",value);
-       this.onClick.emit(value);
+    onClickHandler(key:any){
+      console.log("fn button component called with value" + key);
+       this.onClick.emit(key);
     }
 }

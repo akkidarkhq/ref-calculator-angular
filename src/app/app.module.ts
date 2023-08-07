@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
@@ -9,6 +9,7 @@ import { FunctionButtonComponent } from './button/function-button/function-butto
 import { OperationButtonComponent } from './button/operation-button/operation-button.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DisplayComponent } from './display/display.component';
+import { BackendService } from './Services/backendServices/backend.service';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { DisplayComponent } from './display/display.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   
-  providers: [],
+  providers: [BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

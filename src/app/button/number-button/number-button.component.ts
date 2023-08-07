@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input,Attribute,Output } from '@angular/core';
 import { ButtonComponent } from '../button.component';
 
 @Component({
@@ -13,8 +13,12 @@ export class NumberButtonComponent extends ButtonComponent {
   //     super.ngOnInit();
   // }
 
-  onClickHandler(value:any){
-    console.log("number button component clicked",value);
-    this.onClick.emit(value);
+  @Input() Ids:string="";
+  elementId:string=this.Ids;
+
+  onClickHandler(key:any){
+    console.log("number button component clicked",key);
+    console.log("nope"+this.Ids)
+    this.onClick.emit(key);
   }
 }

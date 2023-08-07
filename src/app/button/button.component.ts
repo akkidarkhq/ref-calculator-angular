@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input,Output } from '@angular/core';
+import { Component, EventEmitter, Input,Output,Attribute } from '@angular/core';
 
 
 @Component({
@@ -11,7 +11,6 @@ export class ButtonComponent {
   @Input() label:any="";
   @Output() onClick:EventEmitter<void> = new EventEmitter();
 
-  constructor(){}
 
   onButtonClick(value:any){
     this.onClick.emit(value);

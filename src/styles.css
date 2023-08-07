@@ -1,3 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import './app/button/function-button/function-button.component.css';
-@import './app/button/number-button/number-button.component.css'
+@import './app/button/number-button/number-button.component.css';
+@import './app/button/operation-button/operation-button.component.css';
+
+body{
+    background-color: rgb(66, 62, 69);
+}

@@ -1,3 +1,6 @@
-/* .numbtns > .btn{
-    background-color: blue;
-} */
+.applicationContainer{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}

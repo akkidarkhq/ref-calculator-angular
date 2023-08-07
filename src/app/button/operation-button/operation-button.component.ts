@@ -10,8 +10,9 @@ import { ButtonComponent } from '../button.component';
 export class OperationButtonComponent extends ButtonComponent {
   
   
-  onClickHandler(value:any){
-    console.log("operation button clicked",value);
+  onClickHandler(key:any){
+    console.log("operation button clicked",key);
+    this.onClick.emit(key);
   }
 
 }
