@@ -10,7 +10,8 @@ import { Component, EventEmitter, Input,Output,Attribute } from '@angular/core';
 export class ButtonComponent {
   @Input() label:any="";
   @Output() onClick:EventEmitter<void> = new EventEmitter();
-
+  @Input() parentId="";
+  @Input() id="";
 
   onButtonClick(value:any){
     this.onClick.emit(value);

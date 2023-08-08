@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ButtonComponent } from '../button.component';
 
 @Component({
@@ -9,6 +9,14 @@ import { ButtonComponent } from '../button.component';
 
 export class OperationButtonComponent extends ButtonComponent {
   
+  @Input() override parentId:string="";
+  elementId:string="";
+
+  override ngOnInit(): void {
+      super.ngOnInit();
+      this.elementId=this.parentId;
+  }
+
   
   onClickHandler(key:any){
     console.log("operation button clicked",key);

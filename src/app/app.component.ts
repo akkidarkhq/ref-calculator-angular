@@ -6,7 +6,7 @@ import { Component,Output } from '@angular/core';
   styleUrls: ['./app.component.css','./button/function-button/function-button.component.css']
 })
 export class AppComponent {
-  title = 'calculator';
+  title = 'Calculator';
   label = "click me";
   
   onClickHandler(){

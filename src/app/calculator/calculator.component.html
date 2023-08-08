@@ -1,18 +1,18 @@
-<div class="calculatorContainer" [id]="parentId">
-    <div class="displayContainer-{{parentId}}">
+<div id="calculatorContainer{{parentId}}" class="calculatorContainer">
+    <div class="displayContainer" id="displayContainer{{parentId}}">
         <app-display  [value]="displayValue" id="displaycomp-{{parentId}}" ></app-display>
     </div>
-    <div class="buttonContainer{{parentId}}">
+    <div class="buttonContainer" id="buttonContainer{{parentId}}">
         <div class="functionBtnContainer">
-            <app-function-button *ngFor="let fnbtn of functionBtn;let i = index" [label]="fnbtn.value" (onClick)="functionButtonClickHandler(fnbtn)" id="fnbtn-{{fnbtn.value}}-{{parentId}}" ></app-function-button>
+            <app-function-button *ngFor="let fnbtn of functionBtn;let i = index" [label]="fnbtn.value" (onClick)="functionButtonClickHandler(fnbtn)" id="fnbtn-{{fnbtn.value}}-{{parentId}}" [parentId]="parentId"></app-function-button>
         </div>
 
         <div class="operationBtnContainer">
-            <app-operation-button *ngFor="let opbtn of operationBtn let i = index" [label]="opbtn.label" (onClick)="operationButtonClickHandler(opbtn)" id="opbtn-{{opbtn.value}}-{{parentId}}"></app-operation-button>
+            <app-operation-button *ngFor="let opbtn of operationBtn let i = index" [label]="opbtn.label" (onClick)="operationButtonClickHandler(opbtn)" id="opbtn-{{opbtn.value}}-{{parentId}}" [parentId]="parentId"></app-operation-button>
         </div>
 
         <div class="numericalBtnContainer">
-            <app-number-button *ngFor="let numbtn of numericalBtn;let i = index" [label]="numbtn.value" (onClick)="numericalButtonClickHandler(numbtn)" [Ids]="parentId" id="numbtn-{{numbtn.value}}-{{parentId}}"></app-number-button>
+            <app-number-button *ngFor="let numbtn of numericalBtn;let i = index" [label]="numbtn.value" (onClick)="numericalButtonClickHandler(numbtn)" id="numbtn-{{numbtn.value}}-{{parentId}}" [parentId]="parentId" ></app-number-button>
         </div>
     </div>
 </div>

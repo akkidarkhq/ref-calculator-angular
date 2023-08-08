@@ -1,21 +1,21 @@
-import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+// import { Injectable } from '@angular/core';
+// import { HttpClient} from '@angular/common/http';
 
 
-@Injectable({ providedIn: 'root'})
+// // @Injectable({ providedIn: 'root'})
 
-export class BackendService {
+// // export class BackendService {
 
-  public baseURL : string = "http://localhost:8080/calculatorbackend/calc";
+// //   public baseURL : string = "http://localhost:8080/calculatorbackend/calc";
 
-  constructor(private http: HttpClient) {
-  }
+// //   constructor(private http: HttpClient) {
+// //   }
     
-  postData(data: string) : any{
-    console.log("hhh" + JSON.stringify(data))
-    const response = this.http.post(this.baseURL,JSON.stringify(data));
-    console.log(response);
-      return  response ;
-  }
+// //   postData(data: string) : any{
+// //     console.log("hhh" + JSON.stringify(data))
+// //     const response = this.http.post(this.baseURL,JSON.stringify(data));
+// //     console.log(response);
+// //       return  response ;
+// //   }
 
-}
+// // }

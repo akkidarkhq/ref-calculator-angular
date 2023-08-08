@@ -6,6 +6,6 @@ import { Component,Input } from '@angular/core';
   styleUrls: ['./display.component.css']
 })
 export class DisplayComponent {
-  @Input() value ='';
-  @Input() Id ="display"
+  @Input() value = "";
+  @Input() Id = "";
 }

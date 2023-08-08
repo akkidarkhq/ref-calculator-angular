@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -8,7 +9,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
+      declarations: [ ButtonComponent ],
+      schemas:[CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
 
@@ -20,4 +22,19 @@ describe('ButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call onButtonClick when clicked', fakeAsync(() => {
+    spyOn(component, 'onButtonClick');
+
+	let button = fixture.debugElement.nativeElement.querySelector('button');
+  button.click();
+
+	tick();
+
+	expect(component.onButtonClick).toHaveBeenCalled();
+  }
+  ));
+
+
+  
 });

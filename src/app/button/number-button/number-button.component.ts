@@ -9,16 +9,19 @@ import { ButtonComponent } from '../button.component';
 
 export class NumberButtonComponent extends ButtonComponent {
 
-  // override ngOnInit(): void {
-  //     super.ngOnInit();
-  // }
+  @Input() override parentId:string="";
+  elementId:string="";
 
-  @Input() Ids:string="";
-  elementId:string=this.Ids;
+  override ngOnInit(): void {
+      super.ngOnInit();
+      this.elementId=this.parentId;
+  }
+
+
 
   onClickHandler(key:any){
     console.log("number button component clicked",key);
-    console.log("nope"+this.Ids)
+    console.log("nope"+this.elementId)
     this.onClick.emit(key);
   }
 }

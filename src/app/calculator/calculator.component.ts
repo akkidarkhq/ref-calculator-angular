@@ -1,6 +1,6 @@
 import { Component,Input,Attribute } from '@angular/core';
 import CalculatorModel from './calculator.model';
-import { BackendService } from '../Services/backendServices/backend.service';
+// import { BackendService } from '../Services/backendServices/backend.service';
 import { Stack } from './stacks';
 
 
@@ -8,14 +8,11 @@ import { Stack } from './stacks';
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.css'],
-  providers:[BackendService,Stack]
+  providers:[Stack],
 })
 
 export class CalculatorComponent {
-
-
- 
-
+  title:string="calculator";
   Id:string="akki";
   
   value:string = '';
@@ -24,10 +21,12 @@ export class CalculatorComponent {
   expressionStack:any=[];
   label:any;
 
-  constructor(@Attribute('id') public parentId :string,private _backendService:BackendService,private _stack:Stack){
-    
-  }
+  // constructor(@Attribute('id') public parentId :string,private _backendService:BackendService,private _stack:Stack){
+  // }
   
+  constructor(@Attribute('id') public parentId :string,private _stack:Stack){
+  }
+
   private model = new CalculatorModel();
 
   functionBtn  = this.model.functionBtns;
@@ -60,7 +59,9 @@ export class CalculatorComponent {
    
       this.setValue('');
       if (key.value == 'EQUALS') {
-          this.calculate();
+        console.log("result");
+
+        //  this.calculate();
           this.expressionStack=[];
       }
       else if (key.value=='ADDITION')  {
@@ -91,24 +92,26 @@ export class CalculatorComponent {
     console.log(this.expressionStack,"expressionStack")
   }
 
-  calculate(){
-    this._backendService.postData(this.expressionStack).subscribe((response:any)=>{
-       console.log(response);
-      const res = response;
-       if(typeof response=== 'number'){
-         console.log(typeof response);
-         this.setValue(res);
-         this._stack.setStack(res);
-       }else if(typeof response == 'object'){
-         console.log(typeof response);
-         this.setDisplay("Access Denied")
-       }
-       // this.setValue(response);
-       // this._stack.setStack(response);
-       // this.checkResponse(response);
-     })
-     this._stack.getStack();
-    };
+  // calculate(){
+  //   this._backendService.postData(this.expressionStack).subscribe((response:any)=>{
+  //      console.log(response);
+  //     const res = response;
+  //      if(typeof response=== 'number'){
+  //        console.log(typeof response);
+  //        this.setValue(res);
+  //        this._stack.setStack(res);
+  //      }else if(typeof response == 'object'){
+  //        console.log(typeof response);
+  //        this.setDisplay("Access Denied")
+  //      }
+  //      // this.setValue(response);
+  //      // this._stack.setStack(response);
+  //      // this.checkResponse(response);
+  //    })
+  //    this._stack.getStack();
+  //   };
+
+
     pushNumber(){
       this.expressionStack.push({type:"NUMBER",value:this.getValue()})
     }

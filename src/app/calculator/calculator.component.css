@@ -12,7 +12,6 @@
 }
 
 .displayContainer{
- 
     height: 100px;
     width: 300px;
     justify-content: center;
@@ -28,7 +27,7 @@
 }
 
 .functionBtnContainer{
-    background-color: blue;
+   
     height: 130px;
     width: 220px;
     float: left;

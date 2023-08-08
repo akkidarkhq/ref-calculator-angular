@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ButtonComponent } from '../button.component';
 
 @Component({
@@ -8,9 +8,14 @@ import { ButtonComponent } from '../button.component';
 })
 export class FunctionButtonComponent extends ButtonComponent {
 
-    override ngOnInit(): void {
-      
-    }
+  @Input() override parentId:string="";
+  elementId:string="";
+
+  override ngOnInit(): void {
+      super.ngOnInit();
+      this.elementId=this.parentId;
+  }
+
 
     onClickHandler(key:any){
       console.log("fn button component called with value" + key);
